@@ -135,7 +135,7 @@
     </insert>
 
     <!-- 根据主键查找用户   -->
-    <select id="queWebUserById" parameterType="Integer" resultMap="BaseResultMap">
+    <select id="queWebUserById" parameterType="Long" resultMap="BaseResultMap">
         select  * from webuser where id =#{id}
     </select>
 

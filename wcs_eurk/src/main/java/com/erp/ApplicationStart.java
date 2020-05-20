@@ -1,10 +1,8 @@
-package com.erp.applaication;
+package com.erp;
 
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.validator.internal.util.logging.Log_$logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author zjx
