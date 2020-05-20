@@ -8,7 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="wcs_eurk" />
+        <module name="wcs_dingdan" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wcs_eurk1" target="1.8" />
+      <module name="wcs_eurk9998" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
