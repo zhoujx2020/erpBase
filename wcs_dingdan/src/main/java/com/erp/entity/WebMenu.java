@@ -9,25 +9,24 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 用户类
+ * 菜单类
  * @author zjx
  * @version 1.0
- * @date 2020/5/17 19:35:54
+ * @date 2020/5/18 17:02:50
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode()
-public class WebUser implements Serializable {
+public class WebMenu implements Serializable {
     private static final long serialVersionUID = 1L;
-    private Long id;
-    private String userNo;
-    private String pwd;
-    private String address;
-    private String email;
-    private String userTel;
-    private Integer userLevel;
-    private String userName;
+    private long menuId;
+    private String iconFont;
+    private String path;
+    private Long menuParent;
+    private String menuName;
+    private Integer menuLevel;
+    private Integer InnerMenuLevel;
     private String remark1;
     private String remark2;
     private String remark3;
