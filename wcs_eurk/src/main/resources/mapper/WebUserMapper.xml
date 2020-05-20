@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.erp.dao.WenUserDao">
+    <resultMap id="BaseResultMap" type="com.erp.entity.WebUser">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="userNo" property="userNo" jdbcType="VARCHAR"/>
+        <id column="pwd" property="pwd" jdbcType="VARCHAR"/>
+        <id column="address" property="address" jdbcType="VARCHAR"/>
+        <id column="email" property="email" jdbcType="VARCHAR"/>
+        <id column="userLevel" property="userLevel" jdbcType="INTEGER"/>
+        <id column="userName" property="userName" jdbcType="VARCHAR"/>
+        <id column="userTel" property="userTel" jdbcType="VARCHAR"/>
+        <id column="remark1" property="remark1" jdbcType="VARCHAR"/>
+        <id column="remark2" property="remark2" jdbcType="VARCHAR"/>
+        <id column="remark3" property="remark3" jdbcType="VARCHAR"/>
+        <id column="remark4" property="remark4" jdbcType="VARCHAR"/>
+        <id column="remark5" property="remark5" jdbcType="VARCHAR"/>
+        <id column="insertId" property="insertId" jdbcType="INTEGER"/>
+        <id column="insertYMD" property="insertYMD" jdbcType="TIMESTAMP"/>
+        <id column="updateId" property="updateId" jdbcType="INTEGER"/>
+        <id column="updateYMD" property="updateYMD" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <!-- 创建新用户   -->
+    <insert id="create" parameterType="WebUser" useGeneratedKeys="true" keyProperty="id">
+        insert into webuser 
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userNo != null">
+                userNo,
+            </if>
+            <if test="pwd != null">
+                pwd,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="userLevel != null">
+                userLevel,
+            </if>
+            <if test="userName != null">
+                userName,
+            </if>
+            <if test="userTel != null">
+                userTel,
+            </if>
+            <if test="remark1 != null">
+                remark1,
+            </if>
+            <if test="remark2 != null">
+                remark2,
+            </if>
+            <if test="remark3 != null">
+                remark3,
+            </if>
+            <if test="remark4 != null">
+                remark4,
+            </if>
+            <if test="remark5 != null">
+                remark5,
+            </if>
+            <if test="insertId != null">
+                insertId,
+            </if>
+            <if test="insertYMD != null">
+                insertYMD,
+            </if>
+            <if test="updateId != null">
+                updateId,
+            </if>
+            <if test="updateYMD != null">
+                updateYMD,
+            </if>
+        </trim>
+        value
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,JDBCTYPE=BIGINT},
+            </if>
+            <if test="userNo != null">
+                #{userNo,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="pwd != null">
+                #{pwd,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="userLevel != null">
+                #{userLevel,JDBCTYPE=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="userTel != null">
+                #{userTel,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,JDBCTYPE=VARCHAR},
+            </if>
+            <if test="insertId != null">
+                #{insertId,JDBCTYPE=INTEGER},
+            </if>
+            <if test="insertYMD != null">
+                #{insertYMD,JDBCTYPE=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                #{updateId,JDBCTYPE=INTEGER},
+            </if>
+            <if test="updateYMD != null">
+                #{updateYMD,JDBCTYPE=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据主键查找用户   -->
+    <select id="queWebUserById" parameterType="Integer" resultMap="BaseResultMap">
+        select  * from webuser where id =#{id}
+    </select>
+
+    <!-- 根据用户名查找用户   -->
+    <select id="queWebUserByNo" parameterType="String" resultMap="BaseResultMap">
+        select  * from webuser where userNo =#{userNo}
+    </select>
+</mapper>
